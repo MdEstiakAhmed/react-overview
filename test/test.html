@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Javascript</title>
+    </head>
+
+    <body>
+        <div>
+            <h1>0</h1>
+            <button>increment</button>
+        </div>
+    </body>
+
+    <script>
+        const button = document.querySelector('button');
+        const h1 = document.querySelector('h1');
+        let count = 0;
+
+        button.addEventListener('click', function() {
+            count++;
+            h1.innerText = count;
+        });
+    </script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List Example</title>
+</head>
+
+<body>
+
+    <h2>Item List</h2>
+    <ul id="itemList"></ul>
+
+    <label for="newItem">New Item:</label>
+    <input type="text" id="newItem" placeholder="Enter new item">
+    <button onclick="addItem()">Add Item</button>
+
+    <script>
+        // Initialize the list
+        var initialItems = ['apple', 'banana', 'mango'];
+        var itemList = document.getElementById('itemList');
+
+
+
+        initialItems.forEach(function (itemText) {
+            var listItem = document.createElement('li');
+            listItem.appendChild(document.createTextNode(itemText));
+            itemList.appendChild(listItem);
+        });
+
+        function addItem() {
+            // Get the input value
+            var newItemValue = document.getElementById('newItem').value;
+
+            initialItems.push(newItemValue);
+
+            initialItems.sort()
+
+            itemList.innerHTML = '';
+
+            initialItems.forEach(function (itemText) {
+                var listItem = document.createElement('li');
+                listItem.appendChild(document.createTextNode(itemText));
+                itemList.appendChild(listItem);
+            });
+
+            // Check if the input is not empty
+            
+        }
+    </script>
+
+</body>
+
+</html>
